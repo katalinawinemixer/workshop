@@ -28,6 +28,18 @@ bun run dev
 `bun run dev` starts the local Workshop daemon and Vite UI. Open
 `http://localhost:5899` after it starts.
 
+## Verify changes
+
+```bash
+bun run lint
+bun run test
+bun run build
+```
+
+The build checks backend and frontend types before bundling the UI. The request
+helper tests cover authentication headers, custom content types, and cancellation
+signals. GitHub Actions runs these checks on pushes and pull requests.
+
 ## Instrument your agent
 
 Open your coding agent of choice in your repository and run:

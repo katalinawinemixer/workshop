@@ -1006,7 +1006,7 @@ function SavedRunDetail({ event }: { event: SavedEvent }) {
 }
 
 // Inline cloud trace viewer — same as RemoteRunDetail in SearchPage but standalone
-import type { Span, SubAgent } from "../utils/types";
+import type { Run, Span, SubAgent } from "../utils/types";
 
 const API_BASE = "https://query.raindrop.ai";
 
