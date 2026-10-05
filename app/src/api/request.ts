@@ -26,13 +26,12 @@ export async function apiText(path: string, init?: RequestInit): Promise<string>
 }
 
 export function jsonInit(method: string, body?: unknown, init?: RequestInit): RequestInit {
+  const headers = new Headers(init?.headers);
+  if (!headers.has("Content-Type")) headers.set("Content-Type", "application/json");
   return {
     ...init,
     method,
-    headers: {
-      "Content-Type": "application/json",
-      ...init?.headers,
-    },
+    headers,
     body: body === undefined ? undefined : JSON.stringify(body),
   };
 }
